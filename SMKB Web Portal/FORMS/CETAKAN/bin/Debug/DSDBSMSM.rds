@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DSDBSMSM">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=V-SQL11.utem.edu.my\SQL_INS01;Initial Catalog=DbStaf</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>091d94df-ed37-4e48-bf82-bf4bda1c0427</DataSourceID>
+</RptDataSource>

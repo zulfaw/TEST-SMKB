@@ -1,0 +1,9 @@
+4/2/2023 1:54:34 PM Page_Load(), Err - System.FormatException: The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters. 
+   at System.Convert.FromBase64_Decode(Char* startInputPtr, Int32 inputLength, Byte* startDestPtr, Int32 destLength)
+   at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+   at System.Convert.FromBase64String(String s)
+   at SMKB_Web_Portal.clsCrypto.fDecrypt(String cipherText) in E:\SMKB Web Portal\SMKB Web Portal\Class\clsCrypto.vb:line 81
+   at SMKB_Web_Portal.DBSMConn.sInitializeConnStr() in E:\SMKB Web Portal\SMKB Web Portal\Class\DBSMConn.vb:line 539
+   at SMKB_Web_Portal.DBSMConn..ctor() in E:\SMKB Web Portal\SMKB Web Portal\Class\DBSMConn.vb:line 28
+   at SMKB_Web_Portal.ModFunction.fGetUserInfo(Object strStaffID) in E:\SMKB Web Portal\SMKB Web Portal\Module\ModFunction.vb:line 16
+   at SMKB_Web_Portal.index.Page_Load(Object sender, EventArgs e) in E:\SMKB Web Portal\SMKB Web Portal\index.aspx.vb:line 67

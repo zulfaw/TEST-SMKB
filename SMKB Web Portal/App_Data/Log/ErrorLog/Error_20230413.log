@@ -1,0 +1,2 @@
+13/04/2023 9:48:34 AM fInsertCommand - Err: Cannot insert the value NULL into column 'created_by', table 'DbKewanganV4.dbo.SMKB_Lookup_Detail'; column does not allow nulls. INSERT fails.
+The statement has been terminated.

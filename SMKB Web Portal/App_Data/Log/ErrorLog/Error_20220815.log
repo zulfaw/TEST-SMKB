@@ -1,0 +1,12 @@
+15/08/2022 4:46:23 PTG fInsertCommand - Err: Cannot insert the value NULL into column 'ErrID', table 'DbKewanganV1.dbo.MK_UErrRpt'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+15/08/2022 4:46:31 PTG fInsertCommand - Err: Cannot insert the value NULL into column 'ErrID', table 'DbKewanganV1.dbo.MK_UErrRpt'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+15/08/2022 4:46:50 PTG fInsertCommand - Err: Cannot insert the value NULL into column 'ErrID', table 'DbKewanganV1.dbo.MK_UErrRpt'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+15/08/2022 4:46:56 PTG fInsertCommand - Err: Cannot insert the value NULL into column 'ErrID', table 'DbKewanganV1.dbo.MK_UErrRpt'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+15/08/2022 4:47:00 PTG fInsertCommand - Err: Cannot insert the value NULL into column 'ErrID', table 'DbKewanganV1.dbo.MK_UErrRpt'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+15/08/2022 4:47:15 PTG fInsertCommand - Err: Cannot insert the value NULL into column 'ErrID', table 'DbKewanganV1.dbo.MK_UErrRpt'; column does not allow nulls. INSERT fails.
+The statement has been terminated.

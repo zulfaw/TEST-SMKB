@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DSDBKew">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=devmis12.utem.edu.my;Initial Catalog=DbKewanganV1</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>cdf91359-1307-47e7-a6b5-1c00c8d58b92</DataSourceID>
+</RptDataSource>

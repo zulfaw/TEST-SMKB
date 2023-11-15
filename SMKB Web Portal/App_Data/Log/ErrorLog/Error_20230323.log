@@ -1,0 +1,8 @@
+23/03/2023 2:46:41 PM fInsertCommand - Err: Cannot insert the value NULL into column 'hfc_cd', table 'DbKewanganV4.dbo.SMKB_Lookup_Detail'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+23/03/2023 2:46:58 PM fInsertCommand - Err: Cannot insert the value NULL into column 'hfc_cd', table 'DbKewanganV4.dbo.SMKB_Lookup_Detail'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+23/03/2023 2:47:57 PM fInsertCommand - Err: Cannot insert the value NULL into column 'hfc_cd', table 'DbKewanganV4.dbo.SMKB_Lookup_Detail'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+23/03/2023 6:50:43 PM fInsertCommand - Err: Cannot insert the value NULL into column 'hfc_cd', table 'DbKewanganV4.dbo.SMKB_Lookup_Detail'; column does not allow nulls. INSERT fails.
+The statement has been terminated.

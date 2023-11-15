@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>DSDBKew</DataSourceReference>
+      <CommandText>SELECT        PO01_PPembelian.PO01_NoMohonSem, PO01_PPembelian.PO01_NoMohon, PO01_PPembelian.PO01_Tahun, PO01_PPembelian.PO01_KodPtjMohon, PO01_PPembelian.PO01_Tujuan, PO01_PPembelian.PO01_JenisDok, 
+                         PO01_PPembelian.PO01_IdPemohon, PO01_PPembelian.PO01_JwtnPemohon, PO01_PPembelian.PO01_IdWakilKpd, PO01_PPembelian.PO01_JenisBrg, PO19_Pt.PO19_PtID, PO19_Pt.PO19_NoPt, PO19_Pt.ROC01_IdSya, 
+                         PO19_Pt.PO19_TkhHantar, PO19_Pt.PO19_BekalKepada, PO19_Pt.PO19_Alamat1Bkl, PO19_Pt.PO19_Alamat2Bkl, PO19_Pt.PO19_BandarBkl, PO19_Pt.PO19_NegeriBkl, PO19_Pt.PO19_NegaraBkl, PO19_Pt.PO19_PoskodBkl, 
+                         PO19_Pt.PO17_IdRunningNo, PO19_Pt.PO17_RunningNo, PO19_Pt.PO19_IdLulus, PO19_Pt.PO19_JwtnLulus, PO19_Pt.PO19_TkhLulus, PO19_Pt.PO19_Tempoh, PO19_Pt.PO19_UnitTempoh, PO19_Pt.PO19_TkhMula, 
+                         ROC01_Syarikat.ROC01_IDSya AS Expr1, ROC01_Syarikat.ROC01_NamaSya, ROC01_Syarikat.ROC01_AlmtP1, ROC01_Syarikat.ROC01_NoAkaun, ROC01_Syarikat.ROC01_AlmtP2, ROC01_Syarikat.ROC01_BandarP, 
+                         ROC01_Syarikat.ROC01_PoskodP, ROC01_Syarikat.ROC01_NegeriP, ROC01_Syarikat.ROC01_NegaraP, ROC01_Syarikat.ROC01_Tel1P, ROC01_Syarikat.ROC01_EmelP
+FROM            PO01_PPembelian LEFT OUTER JOIN
+                         PO19_Pt ON PO19_Pt.PO01_NoMohon = PO01_PPembelian.PO01_NoMohon LEFT OUTER JOIN
+                         ROC01_Syarikat ON PO19_Pt.ROC01_IdSya = ROC01_Syarikat.ROC01_IDSya
+WHERE        (PO19_Pt.PO19_NoPt = @NoPT)</CommandText>
+    </Query>
+  </DataSet>
+</SharedDataSet>

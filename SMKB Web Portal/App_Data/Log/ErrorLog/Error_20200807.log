@@ -1,0 +1,10 @@
+07/08/2020 3:59:12 PM fInsertCommand - Err: Must declare the scalar variable "@Bank".
+07/08/2020 4:06:44 PM fInsertCommand - Err: Must declare the scalar variable "@Bank".
+07/08/2020 4:09:42 PM fInsertCommand - Err: Must declare the scalar variable "@Bank".
+07/08/2020 4:13:53 PM fInsertCommand - Err: String or binary data would be truncated.
+The statement has been terminated.
+07/08/2020 5:13:42 PM fInsertCommand - Err: Must declare the scalar variable "@Bank".
+07/08/2020 5:15:14 PM fInsertCommand - Err: Must declare the scalar variable "@Bank".
+07/08/2020 5:16:45 PM fInsertCommand - Err: Must declare the scalar variable "@Bank".
+07/08/2020 5:22:21 PM fInsertCommand - Err: Must declare the scalar variable "@Bank".
+07/08/2020 5:28:57 PM fInsertCommand - Err: Must declare the scalar variable "@Bank".

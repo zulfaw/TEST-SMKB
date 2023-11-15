@@ -1,0 +1,12 @@
+2/7/2023 12:30:08 PM Page_Load(), Err - System.InvalidCastException: Conversion from type 'DBNull' to type 'String' is not valid.
+   at Microsoft.VisualBasic.CompilerServices.Conversions.ToString(Object Value)
+   at ASP.index_aspx.__DataBind__control14(Object sender, EventArgs e) in E:\SMKB Web Portal\SMKB Web Portal\index.aspx:line 60
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.WebControls.Repeater.CreateItem(Int32 itemIndex, ListItemType itemType, Boolean dataBind, Object dataItem)
+   at System.Web.UI.WebControls.Repeater.AddDataItemsIntoItemsArray(IEnumerable dataSource, Boolean useDataSource)
+   at System.Web.UI.WebControls.Repeater.PostGetDataAction(IEnumerable dataSource)
+   at System.Web.UI.WebControls.Repeater.OnDataBinding(EventArgs e)
+   at SMKB_Web_Portal.index.Page_Load(Object sender, EventArgs e)

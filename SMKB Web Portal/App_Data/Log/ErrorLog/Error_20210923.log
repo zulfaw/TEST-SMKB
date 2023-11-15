@@ -1,0 +1,16 @@
+23/09/2021 11:43:01 AM fInsertCommand - Err: Cannot insert the value NULL into column 'ErrID', table 'DbKewanganV1.dbo.MK_UErrRpt'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+23/09/2021 11:44:29 AM fInsertCommand - Err: Cannot insert the value NULL into column 'ErrID', table 'DbKewanganV1.dbo.MK_UErrRpt'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+23/09/2021 12:17:56 PM fInsertCommand - Err: Cannot insert the value NULL into column 'ErrID', table 'DbKewanganV1.dbo.MK_UErrRpt'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+23/09/2021 12:22:28 PM fInsertCommand - Err: Cannot insert the value NULL into column 'ErrID', table 'DbKewanganV1.dbo.MK_UErrRpt'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+23/09/2021 12:34:17 PM fInsertCommand - Err: Cannot insert the value NULL into column 'ErrID', table 'DbKewanganV1.dbo.MK_UErrRpt'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+23/09/2021 12:34:39 PM fInsertCommand - Err: Cannot insert the value NULL into column 'ErrID', table 'DbKewanganV1.dbo.MK_UErrRpt'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+23/09/2021 12:43:39 PM fInsertCommand - Err: Cannot insert the value NULL into column 'ErrID', table 'DbKewanganV1.dbo.MK_UErrRpt'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+23/09/2021 12:57:01 PM fInsertCommand - Err: Cannot insert the value NULL into column 'ErrID', table 'DbKewanganV1.dbo.MK_UErrRpt'; column does not allow nulls. INSERT fails.
+The statement has been terminated.

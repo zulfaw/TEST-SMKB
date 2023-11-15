@@ -1,0 +1,320 @@
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\SqlServerTypes\x64\msvcr120.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\SqlServerTypes\x86\msvcr120.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\roslyn\csc.exe
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\roslyn\System.Collections.Immutable.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\roslyn\System.Reflection.Metadata.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\roslyn\vbc.exe
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\roslyn\VBCSCompiler.exe
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\roslyn\VBCSCompiler.exe.config
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\SMKB Web Portal.dll.config
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\SMKB Web Portal.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\SMKB Web Portal.pdb
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\WebForms_Basic.xml
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\AjaxControlToolkit.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Antlr3.Runtime.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\AspNet.ScriptManager.bootstrap.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\clsMail.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\EntityFramework.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\EntityFramework.SqlServer.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.AspNet.Identity.Core.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Security.Cookies.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Security.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Security.Facebook.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Security.Google.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Security.OAuth.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Security.Twitter.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.ReportViewer.Common.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.ReportViewer.DataVisualization.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.ReportViewer.Design.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.ReportViewer.WebDesign.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.ReportViewer.WebForms.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.ReportViewer.WinForms.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.ScriptManager.WebForms.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.SqlServer.Types.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Web.Infrastructure.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Newtonsoft.Json.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Owin.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\System.Web.Optimization.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\System.Web.Providers.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\WebGrease.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\EnvDTE.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\stdole.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.VisualStudio.VSHelp.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.VisualStudio.ComponentModelHost.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.VisualStudio.TemplateWizardInterface.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\EnvDTE80.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\VSLangProj.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\VSLangProj80.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.VisualStudio.GraphModel.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.MSXML.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\VSLangProj2.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Security.xml
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Security.Cookies.xml
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Security.Facebook.xml
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Security.Google.xml
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Security.OAuth.xml
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Security.Twitter.xml
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\System.Web.Optimization.xml
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Antlr3.Runtime.pdb
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Newtonsoft.Json.xml
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\EntityFramework.xml
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\EntityFramework.SqlServer.xml
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.AspNet.Identity.Core.xml
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\System.Web.Providers.xml
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.xml
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\EnvDTE.xml
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.VisualStudio.TemplateWizardInterface.xml
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\EnvDTE80.xml
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\VSLangProj.xml
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\VSLangProj80.xml
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\VSLangProj2.xml
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\de\Microsoft.ReportViewer.Common.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\es\Microsoft.ReportViewer.Common.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\fr\Microsoft.ReportViewer.Common.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\it\Microsoft.ReportViewer.Common.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ja\Microsoft.ReportViewer.Common.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ko\Microsoft.ReportViewer.Common.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\pt\Microsoft.ReportViewer.Common.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ru\Microsoft.ReportViewer.Common.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\de\Microsoft.ReportViewer.Design.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\es\Microsoft.ReportViewer.Design.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\fr\Microsoft.ReportViewer.Design.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\it\Microsoft.ReportViewer.Design.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ja\Microsoft.ReportViewer.Design.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ko\Microsoft.ReportViewer.Design.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\pt\Microsoft.ReportViewer.Design.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ru\Microsoft.ReportViewer.Design.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\de\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\es\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\fr\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\it\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ja\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ko\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\pt\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ru\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\zh-CHS\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\zh-CHT\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\de\Microsoft.ReportViewer.WebForms.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\es\Microsoft.ReportViewer.WebForms.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\fr\Microsoft.ReportViewer.WebForms.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\it\Microsoft.ReportViewer.WebForms.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ja\Microsoft.ReportViewer.WebForms.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ko\Microsoft.ReportViewer.WebForms.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\pt\Microsoft.ReportViewer.WebForms.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ru\Microsoft.ReportViewer.WebForms.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\de\Microsoft.ReportViewer.WinForms.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\es\Microsoft.ReportViewer.WinForms.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\fr\Microsoft.ReportViewer.WinForms.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\it\Microsoft.ReportViewer.WinForms.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ja\Microsoft.ReportViewer.WinForms.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ko\Microsoft.ReportViewer.WinForms.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\pt\Microsoft.ReportViewer.WinForms.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ru\Microsoft.ReportViewer.WinForms.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\obj\Release\SMKB Web Portal.vbprojResolveAssemblyReference.cache
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\obj\Release\SMKB_Web_Portal.Resources.resources
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\obj\Release\SMKB Web Portal.vbproj.GenerateResource.Cache
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\obj\Release\SMKB Web Portal.dll
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\obj\Release\WebForms_Basic.xml
+D:\New folder\Working Folder\SMKB Web Portal\SMKB Web Portal\obj\Release\SMKB Web Portal.pdb
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\SqlServerTypes\x64\msvcr120.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\SqlServerTypes\x86\msvcr120.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\roslyn\csc.exe
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\roslyn\System.Collections.Immutable.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\roslyn\System.Reflection.Metadata.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\roslyn\vbc.exe
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\roslyn\VBCSCompiler.exe
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\roslyn\VBCSCompiler.exe.config
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\SMKB Web Portal.dll.config
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\SMKB Web Portal.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\SMKB Web Portal.pdb
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\WebForms_Basic.xml
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\AjaxControlToolkit.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Antlr3.Runtime.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\AspNet.ScriptManager.bootstrap.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\clsMail.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\EntityFramework.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\EntityFramework.SqlServer.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.AspNet.FriendlyUrls.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Security.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Security.Facebook.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Security.Google.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Security.Twitter.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.ReportViewer.Common.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.ReportViewer.DataVisualization.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.ReportViewer.Design.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.ReportViewer.WebDesign.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.ReportViewer.WebForms.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.ReportViewer.WinForms.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.ScriptManager.MSAjax.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.ScriptManager.WebForms.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.SqlServer.Types.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Web.Infrastructure.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Newtonsoft.Json.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Owin.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\System.Web.Optimization.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\System.Web.Providers.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\WebGrease.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\EnvDTE.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\stdole.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.VisualStudio.VSHelp.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.VisualStudio.ComponentModelHost.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.VisualStudio.TemplateWizardInterface.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\EnvDTE80.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\VSLangProj.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\VSLangProj80.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.VisualStudio.GraphModel.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.MSXML.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\VSLangProj2.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Security.xml
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Security.Google.xml
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\System.Web.Optimization.xml
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Antlr3.Runtime.pdb
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Newtonsoft.Json.xml
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.AspNet.FriendlyUrls.xml
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\EntityFramework.xml
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\EntityFramework.SqlServer.xml
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\System.Web.Providers.xml
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.xml
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\EnvDTE.xml
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\Microsoft.VisualStudio.TemplateWizardInterface.xml
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\EnvDTE80.xml
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\VSLangProj.xml
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\VSLangProj80.xml
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\VSLangProj2.xml
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\de\Microsoft.ReportViewer.Common.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\es\Microsoft.ReportViewer.Common.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\fr\Microsoft.ReportViewer.Common.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\it\Microsoft.ReportViewer.Common.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ja\Microsoft.ReportViewer.Common.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ko\Microsoft.ReportViewer.Common.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\pt\Microsoft.ReportViewer.Common.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ru\Microsoft.ReportViewer.Common.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\de\Microsoft.ReportViewer.Design.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\es\Microsoft.ReportViewer.Design.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\fr\Microsoft.ReportViewer.Design.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\it\Microsoft.ReportViewer.Design.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ja\Microsoft.ReportViewer.Design.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ko\Microsoft.ReportViewer.Design.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\pt\Microsoft.ReportViewer.Design.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ru\Microsoft.ReportViewer.Design.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\de\Microsoft.ReportViewer.WebDesign.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\es\Microsoft.ReportViewer.WebDesign.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\fr\Microsoft.ReportViewer.WebDesign.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\it\Microsoft.ReportViewer.WebDesign.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ja\Microsoft.ReportViewer.WebDesign.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ko\Microsoft.ReportViewer.WebDesign.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\pt\Microsoft.ReportViewer.WebDesign.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ru\Microsoft.ReportViewer.WebDesign.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\zh-CHS\Microsoft.ReportViewer.WebDesign.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\zh-CHT\Microsoft.ReportViewer.WebDesign.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\de\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\es\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\fr\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\it\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ja\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ko\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\pt\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ru\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\de\Microsoft.ReportViewer.WinForms.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\es\Microsoft.ReportViewer.WinForms.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\fr\Microsoft.ReportViewer.WinForms.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\it\Microsoft.ReportViewer.WinForms.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ja\Microsoft.ReportViewer.WinForms.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ko\Microsoft.ReportViewer.WinForms.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\pt\Microsoft.ReportViewer.WinForms.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\ru\Microsoft.ReportViewer.WinForms.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\bin\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\obj\Release\SMKB Web Portal.vbprojResolveAssemblyReference.cache
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\obj\Release\SMKB_Web_Portal.Resources.resources
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\obj\Release\SMKB Web Portal.vbproj.GenerateResource.Cache
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\obj\Release\SMKB Web Portal.dll
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\obj\Release\WebForms_Basic.xml
+E:\Working Folder\SMKB Web Portal\SMKB Web Portal\obj\Release\SMKB Web Portal.pdb

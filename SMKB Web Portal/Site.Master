@@ -1,0 +1,254 @@
+﻿<%@ Master Language="VB" AutoEventWireup="true" CodeBehind="Site.master.vb" Inherits="SMKB_Web_Portal.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS LOCAL -->
+    <link rel="stylesheet" href="<%=ResolveClientUrl("~/Content/css/styles.css")%>" />
+    <%--<link rel="stylesheet" href="<%=ResolveClientUrl("~/Content/css/styles.css?ver=1.0")%>" />--%>
+    <link rel="stylesheet" href="<%=ResolveClientUrl("~/Content/css/dropdown.min.css")%>" />
+    <link rel="stylesheet" href="<%=ResolveClientUrl("~/Content/css/bootstrap.min.css")%>" />
+    <link rel="stylesheet" href="<%=ResolveClientUrl("~/Content/css/transition.min.css")%>" />
+    <link rel="stylesheet" href="<%=ResolveClientUrl("~/Content/css/stylemenu.css")%>" />
+    <link rel="stylesheet" href="<%=ResolveClientUrl("~/Content/css/jquery.dataTables.min.css")%>" />
+	<script src='<%=ResolveClientUrl("~/Content/script/script.js")%>'></script>
+
+     <link rel="stylesheet" href="Content/css/loader.css" />
+
+    <!-- FONT LINK -->
+    <%--<link href="Content/font-awesome/css/style.css" rel="stylesheet" />--%>
+
+    <!-- ICON LINK -->
+    <%--<link rel="stylesheet" href="<%=ResolveClientUrl("~/Content/css/line-awesome.min.css")%>">
+    <link rel="stylesheet" href="<%=ResolveClientUrl("~/Content/css/all.min.css")%>">
+    <link rel="stylesheet" href="<%=ResolveClientUrl("~/Content/css/fonts_Poppins.css")%>">
+    <link rel="stylesheet" href="<%=ResolveClientUrl("~/Content/css/font-awesome.min.css")%>">--%>
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css">
+
+    <%--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">--%>
+    
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">	
+    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- SCRIPT CDN -->
+    <script src="<%=ResolveClientUrl("~/Content/js/SharedFunction.js")%> "></script>
+    <script src="<%=ResolveClientUrl("~/Content/js/jquery.min.js")%> "></script>
+    <script src="<%=ResolveClientUrl("~/Content/js/jquery.dataTables.min.js")%> "></script>
+    <script src="<%=ResolveClientUrl("~/Content/js/popper.min.js")%>" crossorigin="anonymous"></script>
+    <script src='<%=ResolveClientUrl("~/Content/js/bootstrap.min.js")%>'></script>
+    <script src="<%=ResolveClientUrl("~/Content/js/selectize.min.js")%>" crossorigin="anonymous"></script>
+    <script src="<%=ResolveClientUrl("~/Content/js/api.min.js")%>" crossorigin="anonymous"></script>
+    <script src="<%=ResolveClientUrl("~/Content/js/transition.min.js")%>" crossorigin="anonymous"></script>
+    <script src="<%=ResolveClientUrl("~/Content/js/dropdown.min.js")%>" crossorigin="anonymous"></script>
+     <script src='<%=ResolveClientUrl("~/Content/script/d_loader.js")%>'></script>
+
+</head>
+
+<body>
+    <form runat="server">
+        <div class="wrapper d-flex align-items-stretch">
+            <nav id="sidebar">
+                <div class="p-4 pt-5">
+                    <div class="sidenav-logo">
+                        <img src="<%=ResolveClientUrl("~/assets/images/smkb-logo.svg")%>" />
+                    </div>
+
+                    <asp:Repeater ID="rptMenu" OnItemDataBound="rptMenu_ItemDataBound" runat="server">
+                        <ItemTemplate>
+                            <asp:HiddenField runat="server" ID="hidKodSub" Value='<%#Trim(Eval("Kod_Sub"))%>' />
+                            <div class="menu-item main" id="<%#Trim(Eval("Kod_Sub"))%>"
+                                data-url='<%=ResolveClientUrl("~/FORMS/9702.aspx")%>?kodsub=<%#Trim(Eval("Kod_Sub"))%>'>
+                                <div class="item-icon">
+                                    <i class="las la-<%#Trim(Eval("Nama_Icon"))%>"></i>
+                                </div>
+                                <div class="item-title">
+                                    <asp:LinkButton runat="server"
+                                        href=''
+                                        ID="btnSubMenu2"
+                                        data-toggle="collapse"
+                                        aria-expanded="false"
+                                        AutoPostBack="false"
+                                        class="dropdown-toggle">
+                                            <%#Trim(Eval("Nama_Sub")) %>
+                                    </asp:LinkButton>
+                                </div>
+                            </div>
+
+
+                            <div id='detail<%#Trim(Eval("Kod_Sub"))%>'>
+                                <ul class="collapse list-unstyled <%#CheckReportActive(Trim(Eval("Kod_Sub")))%>" id="toggle<%#Trim(Eval("Kod_Sub"))%>">
+                                    <asp:Repeater ID="rptMenuDetails" runat="server">
+                                        <ItemTemplate>
+                                            <li>
+                                                <div class="menu-item sub-item <%#CheckReportActive(Trim(Eval("Kod_Sub")))%>" data-url='<%#ResolveClientUrl("~/" & Trim(Eval("URL"))) %>?rpt=true&kod=<%#Trim(Eval("Kod_Sub"))%>' data-kodsubmenu='<%#Trim(Eval("Kod_Sub_Menu")) %>' style="">
+                                                    <div class="item-icon">
+                                                        <i></i>
+                                                    </div>
+                                                    <div class="item-title">
+                                                        <a><%#Trim(Eval("Nama_Sub_Menu")) %></a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                </ul>
+                            </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                    <div class="footer">
+                    </div>
+
+                </div>
+            </nav>
+
+            <div class="Content-Container">
+                <div class="modul-header">
+                    <span class="nav-btn" onclick="openNav()">&#9776;</span>
+                     <div class="back-btn" onclick="location.href='<%=ResolveClientUrl("~/index.aspx")%>';">
+<%--                    <div class="back-btn" onclick="location.href='<%=ResolveClientUrl("~/index.aspx?Menu='1'")%>';">--%>
+                        <i class="fa fa-angle-left" style="font-size: 36px"></i>
+                        <a>Menu Utama</a>
+                    </div>
+
+                    <div class="account-info light">
+                        <a style ="color:black !important;"><%=Session("ssusrName")%></a>
+                        <div class="action">
+                            <div class="profile" onclick="menuToggle();">
+                                <img src="https://portal.utem.edu.my/oas/directory/bak/image.asp?myStaff=<%=Session("ssusrID")%>" />
+                            </div>
+                            <div class="menu">
+                                <h3><%=Session("ssusrName")%><br />
+                                    <span><%=Session("ssusrPost")%></span></h3>
+                                <ul>
+                                    <li>
+                                        <i class="las la-sign-out-alt"></i>
+                                        <a href="#" id="logoutLink">Logout</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+    <script type="text/javascript">
+        var isFirstPage = null;
+
+        $('.menu-item.main').click(function (evt) {
+            evt.preventDefault();
+            var url = $(this).data("url");
+            var kod = $(this).attr("id");
+            var subMenu = $("#detail" + kod);
+
+            if (subMenu.children().children().length <= 0) {
+                location.href = url;
+            } else {
+                subMenu.toggleClass("active");
+            }
+
+        });
+
+        $('.menu-item.sub-item').click(function () {
+            var url = $(this).data("url");
+
+            if (url === "-") {
+                console.log("Tidak wujud");
+                return false;
+            }
+            location.href = url;
+        })
+
+        $(function () {
+            //Autoload first menu - 8 ogos 2023 
+            const $divElement = $('.Content-Container .content');
+            if (!$.trim($divElement.text())) {
+                $('.menu-item.main').eq(0).click();
+            }
+        })
+    </script>
+
+    <script>
+        // Get a reference to the logout link
+        var logoutLink = document.getElementById("logoutLink");
+
+        // Add a click event listener to the logout link
+        logoutLink.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent the default link behavior
+
+            // Perform logout-related tasks here, such as clearing cookies, session data, etc.
+
+            // Close the window/tab
+            window.close();
+        });
+    </script>
+
+<script type="text/javascript">
+    //$(document).ready(function () {
+    //    var firstMenuItem = $('.menu-item.main').first();
+    //    var kod = firstMenuItem.attr("id");
+    //    var subMenu = $("#detail" + kod);
+
+    //    // Flag to ensure auto-loading happens only once
+    //    var isFirstMenuLoaded = false;
+
+    //    // Menu item click event handler
+    //    $('.menu-item.main').click(function (evt) {
+    //        evt.preventDefault();
+    //        var url = $(this).data("url");
+    //        var kod = $(this).attr("id");
+    //        var subMenu = $("#detail" + kod);
+
+    //        if (subMenu.children().children().length <= 0) {
+    //            if (url !== "-") {
+    //                location.href = url;
+    //            }
+    //        } else {
+    //            subMenu.toggleClass("active");
+    //        }
+    //    });
+
+    //    $('.menu-item.sub-item').click(function () {
+    //        var url = $(this).data("url");
+
+    //        if (url === "-") {
+    //            console.log("Tidak wujud");
+    //            return false;
+    //        }
+    //        location.href = url;
+    //    });
+
+    //    // Automatically load the first menu item after a delay
+    //    setTimeout(function () {
+    //        if (!isFirstMenuLoaded) {
+    //            firstMenuItem.click();
+    //            isFirstMenuLoaded = true;
+    //        }
+    //    }, 100); // Adjust the delay if needed
+    //});
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/Site.Master" AutoEventWireup="false" CodeBehind="NestedMasterPage2.master.vb" Inherits="SMKB_Web_Portal.NestedMasterPage2"%>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
+ 
+    <div class="sub-modul-title">
+        <h5><asp:label id="namaSubMenu" runat="server"></asp:label></h5>
+    </div>
+    
+    <div class="tab">
+        <asp:repeater runat="server" id="rptSubMenu" OnItemDataBound="rptSubMenu_ItemDataBound">
+            <ItemTemplate>
+                <button class="tablinks" id="btnMenu<%#Eval("Kod_Sub_Menu")%>" data-url='<%=ResolveClientUrl("~/")%><%#Trim(Eval("Nama_Fail")) %>'  ><%#Trim(Eval("Nama_Sub_Menu")) %></button>
+            </ItemTemplate>
+        </asp:repeater>
+        <input type ="hidden" runat="server" id="hidSubMenu2" />
+    </div>
+      
+    <asp:ContentPlaceHolder runat="server" ID="FormContents">
+    </asp:ContentPlaceHolder>
+
+<script>
+    $('.tablinks').click(function (evt) {
+        return openSubMenu(evt);
+    });
+
+    var kodSubMenu = document.getElementById('<%=hidSubMenu2.ClientID%>');
+    function openSubMenu(evt, paramLink) {
+        evt.preventDefault();
+        paramLink = $(evt.currentTarget).data("url");
+       
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        document.getElementById("<%=hidSubMenu2.ClientID%>").value = evt.currentTarget.id;
+        evt.currentTarget.className += " active";
+        
+
+        if (paramLink === "../-") {
+            alert("Halaman dalam pembangunan");
+            return false;
+        }
+
+        window.location.href = paramLink + "?kodsubmenu=" + evt.currentTarget.id;
+
+        //console.log(tabcontent);
+        //console.log(tablinks);
+    }
+
+    if (kodSubMenu.value !== "") {
+        console.log(document.getElementById(kodSubMenu.value));
+        document.getElementById(kodSubMenu.value).className += " active";
+    }
+</script>
+
+</asp:Content>

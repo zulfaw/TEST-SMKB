@@ -1,0 +1,894 @@
+﻿<%@ Master Language="VB" AutoEventWireup="true" CodeBehind="Site.master.vb" Inherits="SMKB_Web_Portal.SiteMaster" %>
+
+<%@ Import Namespace="SMKB_Web_Portal" %>
+<%@ Import Namespace="Microsoft.AspNet.Identity" %>
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE" />
+    <title>SMKB</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+         <%: Scripts.Render("~/bundles/jQuery1120") %>
+     <%: Scripts.Render("~/bundles/bootstrap336") %>
+    <%: Scripts.Render("~/bundles/bootstrap337") %>
+     <%--<%: Styles.Render("~/bundles/fontAwesome") %>--%>
+        <%: Styles.Render("~/bundles/fontAwesome-5-7-1") %>
+         <%: Styles.Render("~/bundles/bootstrap") %>
+         <%: Styles.Render("~/bundles/Style") %>
+         <%: Scripts.Render("~/bundles/nicescroll") %>     
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+
+    <link href="Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+         
+    <style type="text/css">
+        
+        .mainContent{
+            position:relative;
+            top:-50px;
+
+        }
+
+        .nav-side-menu
+        {
+            /*overflow: auto;
+            font-family: 'open_sansregular', sans-serif;*/
+            font-size: 9px;
+            font-weight: bold;
+            background-color: #d9ae00;
+            position: absolute ;
+            top: 120px;
+            width: 250px;
+            height: 100%;
+            color: #00002B;
+            left: 1px;            
+        }
+
+        .nav-side-menu2
+        {
+            overflow: auto;
+          display:none;
+            background-color: #d19b3d;
+            position: absolute ;
+            top: 60px;
+            width: 50px;
+            height: 100%;            
+            left: 1px;            
+        }
+        .brand
+        {
+            background-color: #23282e;
+            line-height: 20px;
+            display: block;
+            text-align: center;
+            font-size: 12px;
+            color:white;
+        }
+        .nav-side-menu .toggle-btn
+        {
+            display: none;
+        }
+        .nav-side-menu ul, .nav-side-menu li
+        {
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+            line-height: 35px;
+            cursor: pointer; /*   
+.collapsed{
+.arrow:before{
+            font-family: FontAwesome;
+            content: "\f053";
+            display: inline-block;
+            padding-left:10px;
+            padding-right: 10px;
+            vertical-align: middle;
+            float:right;
+    }
+}
+*/
+        }
+        .nav-side-menu ul :not(collapsed) .arrow:before, .nav-side-menu li :not(collapsed) .arrow:before
+        {
+            font-family: "FontAwesome";
+            content: "\f107";
+            display: inline-block;
+            padding-left: 10px;
+            padding-right: 10px;
+            vertical-align: middle;
+            float: right;
+           
+        }
+        .nav-side-menu ul .active, .nav-side-menu li .active
+        {
+            border-left: 3px solid #d19b3d;
+            background-color: #D5AB2B;
+        }
+        .nav-side-menu ul .sub-menu li.active, .nav-side-menu li .sub-menu li.active
+        {
+            color: #d19b3d;
+            color: #00002B;
+        }
+        .nav-side-menu ul .sub-menu li.active a, .nav-side-menu li .sub-menu li.active a
+        {
+            color: #d19b3d;
+        }
+        .nav-side-menu ul .sub-menu li, .nav-side-menu li .sub-menu li
+        {
+            /*background-color: #ECEC97;*/
+             background-color: #F9F9A4;
+            border: none;
+            line-height: 28px;
+            border-bottom: 1px solid #23282e;
+            margin-left: 0px;
+            color:#00002B;
+        }
+        .nav-side-menu ul .sub-menu li:hover, .nav-side-menu li .sub-menu li:hover
+        {
+            background-color: #EDC26D;
+        }
+        .nav-side-menu ul .sub-menu li:before, .nav-side-menu li .sub-menu li:before
+        {
+            /*font-family: FontAwesome;
+            content: "\f105";
+            display: inline-block;
+            padding-left: 10px;
+            padding-right: 10px;
+            vertical-align: middle;*/
+        }
+        .nav-side-menu li
+        {
+            padding-left: 0px;
+            border-left: 3px solid #2e353d;
+            border-bottom: 1px solid #23282e;
+            
+        }
+        .nav-side-menu li a
+        {
+            text-decoration: none;
+            color: #05032d;
+            font-weight: bold;
+        }
+        .nav-side-menu li a i
+        {
+            padding-left: 10px;
+            width: 20px;
+            padding-right: 20px;
+        }
+        .nav-side-menu li:hover
+        {
+            border-left: 3px solid #d19b3d;
+            background-color: #E7BC3D;
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            -ms-transition: all 1s ease;
+            transition: all 1s ease;
+        }
+       
+        @media (min-width: 1px)
+        {
+            .nav-side-menu .menu-list .menu-content
+            {
+                display: block;
+            }
+        }
+
+        .header {
+    position: fixed ;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #3C3C3C;
+    height: 90px;
+    border-bottom-style: solid;
+    border-bottom-color: #d9ae00;
+   
+}
+
+        .HeaderText {
+
+    position: absolute;
+    top: 40px;
+    left: 200px;
+    font-size: 30px;
+    font-weight:600;
+    color: white;
+    width: 700px;
+    font-family: arial;
+    border-bottom: 1px solid #ffffff;
+    width: 90%;
+    
+}    
+        .HeaderText:before {
+           
+    content: "SISTEM MAKLUMAT KEWANGAN BERSEPADU"; 
+    /*font-family: Arial;*/
+    
+    left:-5px;
+    position:absolute;
+    top:0;
+    text-decoration: none;
+    /*line-height: 1;*/
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 1px;
+    display: block;
+    text-shadow: 3px 3px #000000;
+
+ }
+
+        /*-----------------------------------------------*/
+
+       /* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  margin-top: 20px;
+}
+
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper .container {
+  padding-left: 0;
+  padding-right: 0;
+}
+.navbar-wrapper .navbar {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.navbar-content
+{
+    width:100%;
+    /*padding: 15px;*/
+    padding-bottom:0px;
+}
+.navbar-content:before, .navbar-content:after
+{
+    display: table;
+    content: "";
+    line-height: 0;
+}
+/*.navbar-nav.navbar-right:last-child {
+margin-right: 15px !important;
+    top: 55px;
+    position: absolute;
+    right: 10px;
+}*/
+.navbar-footer 
+{
+    background-color:#DDD;
+}
+.navbar-footer-content { padding:15px 15px 15px 15px; }
+.dropdown-menu {
+padding: 0px;
+overflow: hidden;
+}
+
+/*--------------------------------------*/
+.btn {
+  background: #ffffff;
+  background-image: -webkit-linear-gradient(top, #ffffff, #eaeff2);
+  background-image: -moz-linear-gradient(top, #ffffff, #eaeff2);
+  background-image: -ms-linear-gradient(top, #ffffff, #eaeff2);
+  background-image: -o-linear-gradient(top, #ffffff, #eaeff2);
+  background-image: linear-gradient(to bottom, #ffffff, #eaeff2);
+  -webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  border-radius: 3px;
+  font-family: Arial;
+  color: #000000;
+  font-size: 12px;
+  padding: 5px 5px 5px 5px;
+  border: solid #808285 1px;
+  text-decoration: none;
+  width:120px;
+}
+
+.btn:hover {
+  color: #78756a;
+  text-decoration: none;
+}
+
+        .modalBackground
+        {
+            background-color: Black;
+            filter: alpha(opacity=60);
+            opacity: 0.6;
+        }
+        .modalPopup
+        {
+            background-color: #FFFFFF;
+            width: 300px;
+            border: 3px solid #EFC51B;
+            border-radius: 12px;
+            padding: 0;
+        }
+        .modalPopup .header
+        {
+            background-color: #FFFFAA;
+            height: 30px;
+            color: black ;
+            line-height: 30px;
+            text-align: center;
+            font-weight: bold;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+        }
+        .modalPopup .body
+        {
+            padding:5px;
+            min-height: 50px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .modalPopup .footer
+        {
+            padding: 6px;
+        }
+        .modalPopup .yes, .modalPopup .no
+        {
+            height: 23px;
+            color: black ;
+            line-height: 23px;
+            text-align: center;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .modalPopup .yes
+        {
+            background-color: #FFD42A;
+            border: 1px solid #D5AA00;
+            width:50px;
+        }
+        .modalPopup .no
+        {
+            background-color: #FFD42A;
+            border: 1px solid #D5AA00;
+            width:50px;
+        }
+
+        .GvTopPanel{
+        border-style: solid;
+    height: 28px;
+    border-width: 1px;
+    border-color: darkgrey;
+
+}
+
+        .btnNone{
+            border-style: solid;
+    background: none;
+    border-width: 1px;
+    margin: 2px;
+    border-color: lightgrey;
+    border-radius: 4px;
+    height:25px;
+        }
+
+        .rightAlign { text-align:right; }
+        .centerAlign { text-align:center; }
+
+        .lblTimer{
+            color:red;
+            font-size:10pt;
+        }
+
+        .btnCal {
+    border: none;
+    padding-left: 0;
+    font-size: 18px;
+    background-color:white;
+    /*height:25px;*/
+}
+
+.btnCal:hover {
+    color: dodgerblue;
+}
+
+.MessagePanelDiv 
+{
+    position:fixed;
+    left: 35%;
+    top:15%;
+    width:35%;
+}
+
+
+     .alert {
+            display: block;
+        }
+
+</style>
+
+</head>
+<body>
+    <form id="form1" runat="server" autocomplete="off">
+        
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <%--<asp:ScriptReference Name="jquery" />--%>
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        
+         
+
+        <div class="wrapper">
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <img id="Image1" src="/SMKBNet/Images/logo.png">
+                </div>
+                <div class="brand">            MENU 
+            </div>   
+                <div class="nav-side-menu" runat="server" id="divLeftMenu">        
+             <div style="background-color :white ;align-content :center ;">     
+         </div>
+
+  <%--      <div class="menu-list">
+            <ul id="menu-content" class="menu-content collapse out">
+                <asp:Repeater ID="rptCategories" runat="server" OnItemDataBound="rptMenu_OnItemBound">
+                    <ItemTemplate>
+                       
+                        <li data-toggle="collapse"  data-target='#<%#Eval("KodModul") %>' class="collapsed">
+                            &nbsp;<i class="fa fa-arrow-circle-right" aria-hidden="true"></i> 
+                            <%#Eval("NamaModul") %><span class="arrow"></span></a> </li>
+                        <asp:Literal ID="ltrlSubMenu" runat="server"></asp:Literal>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </ul>
+        </div>--%>
+
+                     <div class="menu-list">
+            <ul id="menu-content" class="menu-content collapse out">
+                <asp:Repeater ID="rptMenu" runat="server" OnItemDataBound="rptMenu_OnItemBound">
+                    <ItemTemplate>
+                       
+                        <li data-toggle="collapse"  data-target='#<%#Eval("KodModul") %>' class="collapsed">
+                            &nbsp;<i class="fa fa-arrow-circle-right" aria-hidden="true"></i> 
+                            <%#Eval("NamaModul") %></li>
+                        <asp:Literal ID="ltrlSubMenu" runat="server"></asp:Literal>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </ul>
+        </div>
+
+    </div>
+                             
+            </nav>
+
+            <!-- Page Content Holder -->
+            <div id="content">
+
+                <nav class="navbar navbar-default">
+                   <%--<div class="container-fluid">
+                            <button type="button" id="sidebarCollapse" class="fa fa-bars fa-2x toggle-btn"  title="Toggle Menu" >                                 
+                            </button>
+                        <span class="navbar-brand">          
+          <span class="header-text"></span>
+  </span>
+                          
+                        </div>--%>
+                        
+                         
+
+                    <div  style="position: absolute;
+    background-color: #080808;
+    bottom: 0px;
+   min-height: 40px;
+    width: 100%;
+    border-top-color: #c09853;
+    border-top-style: solid;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-width: 1px;">
+
+                        <div class="container-fluid">
+                            <div style="    float: left;
+
+    margin-top: 5px;
+    margin-left: 5px;">
+                           <%-- <button type="button" id="sidebarCollapse" class="fa fa-bars"  title="Toggle Menu">                                 
+                            </button></div>--%>
+
+                            <i class="fa fa-bars fa-2x" aria-hidden="true" id="sidebarCollapse"   title="Toggle Menu" style="cursor:pointer;color:white;"></i></div>
+                        <%--<span class="navbar-brand">          
+          <span class="header-text"></span>
+  </span>--%>
+                            <div class="" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right" style="height:100%;">
+                                 <li><ul class="nav navbar-nav navbar-right" >
+                                    <li class="dropdown">                                        
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"  aria-expanded="false">
+                                            <span class="glyphicon glyphicon-user" ></span> <%=Session("ssusrName")%>                                            
+                                        <b class="caret" ></b></a>
+                                        <ul class="dropdown-menu" style="width: 500px;">
+                                            <li>
+                                            <div class="navbar-header" style="width: 100%;height: 30px;text-align: center;vertical-align: middle;line-height: 30px;background-color: #D9AE09;FONT-WEIGHT: bold;color:#080808;">
+                                                   MAKLUMAT PENGGUNA
+                                                </div>
+                                                <div class="navbar-content">
+                                                    <div class="row" style="margin:0px;">                                                      
+                                                        <div class="col-md-7" style="width:500px;padding-top: 40px;padding-bottom: 10px;">
+                                                            <p></p>                                                             
+                                                           <p><i class="far fa-user-circle"></i><span style="font-weight :bold;"> &nbsp; ID Staff: </span> <%=Session("ssusrID")%></p>
+                                                           <p><i class="fas fa-id-badge"></i><span style="font-weight :bold;"> &nbsp; Jawatan: </span> <%=Session("ssusrPost")%></p>
+                                                           <p><i class="fa fa-university" aria-hidden="true"></i><span style="font-weight :bold;"> &nbsp; PTj: </span> <%=Session("ssusrKodPTj")%> - <%=Session("ssusrPTj")%></p>
+                                                            <p><i class="fa fa-address-card" aria-hidden="true"></i><span style="font-weight :bold;"> &nbsp; Tahap Pengguna: </span> <%=Session("ssUsrTahap")%></p>
+                                                           <p><i class="fa fa-hourglass-end" aria-hidden="true"></i><span style="font-weight :bold;"> &nbsp; Login Terakhir: </span> <%=Session("ssLastLogin")%>  </p>
+                                                            <p><asp:LinkButton ID="lbtnTukarPTj" runat="server" CssClass="btn "><i class="fas fa-exchange-alt"></i>&nbsp; Tukar PTj</asp:LinkButton>
+                                                            </p>                                                                                                           
+                                                        </div>                                      
+                                                    </div>
+                                                </div>
+                                                
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul></li>
+                            <li runat="server" onclick ="return ShowBox();"><a href="#"><span class="glyphicon glyphicon-log-out"></span> &nbsp;Keluar Sistem</a></li>
+                            </ul>
+                        </div>
+                          
+                        </div>                                               
+                    </div>
+                </nav>
+      
+                 <div class="container body-content">
+                     <div class="mainContent">                                           
+                         <asp:ContentPlaceHolder ID="MainContent" runat="server"> 
+                                                                                                                     
+                         </asp:ContentPlaceHolder>
+                    </div>
+                 </div>
+                                                                              
+            </div>
+
+            </div>
+        <asp:HiddenField ID="hidSubmenuId" runat="server" />   
+        <asp:HiddenField ID="hidTimeOut" runat="server"/>
+        <asp:HiddenField ID="hidWarn" runat="server"/>
+
+        <asp:Button ID="btnPopup1" runat="server" style="display:none;"   />                
+                    <ajaxToolkit:ModalPopupExtender ID="mpeTukarPTj" runat="server" BackgroundCssClass="modalBackground" PopupControlID="pnlTukarPTj" TargetControlID="btnPopup1">
+                                     </ajaxToolkit:ModalPopupExtender>  
+                     
+            <asp:Panel ID="pnlTukarPTj" runat="server" BackColor="White" Width="800px" style="display:none;">
+               
+                <table  style="border: Solid 3px #D5AA00; width: 100%; height: 100%;">
+                    <tr style="background: linear-gradient(to bottom, #fceabb 0%,#fccd4d 50%,#f8b500 51%,#fbdf93 100%);">
+                         <td style="height: 10%;text-align:center;" class="">
+                            <b> Tukar PTj</b></td>
+                        <td style="width:50px;text-align:center;">   
+                           <button runat="server" id="Button3" title="Tutup" class="btnNone ">
+    <i class="far fa-window-close fa-2x"></i>
+</button></td>
+                                                    
+                        
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align:center;">
+                            <div class="row" style="margin-top:10px; width: 98%;">
+                                    <table style="width:100%;text-align:left;">
+                                        <tr style="height:35px;">
+                                            <td style="width:66px;">ke PTj:</td>
+                                            <td>
+                                                <asp:DropDownList ID="ddlPTj" runat="server" AutoPostBack="True" CssClass="form-control">
+                                                </asp:DropDownList>
+                                            </td>
+                                        </tr>
+                                        <tr >
+                                            <td style="width:66px;">&nbsp;</td>
+                                            <td>
+                                                &nbsp;</td>
+                                        </tr>                                     
+                                        <tr>
+                                            <td style="width:66px;"></td>
+                                            <td>
+                                                <asp:LinkButton ID="lbtnOKTukarpTj" runat="server" CssClass="btn "><i class="fas fa-exchange-alt"></i>&nbsp; Tukar</asp:LinkButton>
+                                            </td>
+                                        </tr>
+                                      
+                            </table>                                                                                                                                                          
+                            </div>
+
+                        </td>
+                    </tr>                           
+          </table> 
+                
+            </asp:Panel>
+
+        
+      
+
+    </form>
+
+  
+    
+
+    <%--Session expiry function  --%> 
+    <script src="<%= Page.ResolveUrl("~/Scripts/dist/bootstrap-session-timeout.js")%>"></script>
+    
+    <script>
+    $.sessionTimeout({
+        keepAliveUrl: "<%= Page.ResolveUrl("~/FORMS/Keep-Alive.aspx")%>",
+        logoutUrl: "<%= Page.ResolveUrl("~/FORMS/Logout.aspx")%>",
+        redirUrl: "<%= Page.ResolveUrl("~/FORMS/Logout.aspx")%>",
+        warnAfter: parseInt($("#"+ '<%= hidTimeOut.ClientID %>').val()) ,
+        redirAfter: parseInt($("#"+ '<%= hidWarn.ClientID %>').val()),
+        countdownBar: true
+    });
+    </script>
+
+    <script type="text/javascript">     
+        $(document).ready(function () {
+            window.setTimeout(function () {
+                if ($(".alert").hasClass('alert-dismissible')) {
+                    $(".alert").fadeTo(1500, 0).slideUp(500, function () {
+                        //$(this).remove();
+                        //$(".alert").close;
+                        $(".alert").hide;
+                    });
+                }
+                
+            }, 3000);
+        });
+
+        var parameter = Sys.WebForms.PageRequestManager.getInstance();
+        parameter.add_endRequest(function () {
+
+        window.setTimeout(function () {
+            if ($(".alert").hasClass('alert-dismissible')) {
+                $(".alert").fadeTo(1500, 0).slideUp(500, function () {
+                    //$(this).remove();
+                    //$(".alert").close;
+                    $(".alert").hide;
+                });
+            }
+
+        }, 3000);
+        });
+
+        $(document).ready(function () {
+            $('input[readonly]').on('keydown', function (e) {
+                if (e.which === 8) {
+                    e.preventDefault();
+                }
+            });
+
+        });
+
+        function pageLoad() {
+            $('[data-toggle="tooltip"]').tooltip();
+            $('[data-toggle="popover"]').popover();
+
+         
+        }
+
+        $(document).ready(function () {
+            $("#sidebar").niceScroll({
+                cursorcolor: '#53619d',
+                cursorwidth: 4,
+                cursorborder: 'none'
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar, #content').toggleClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+
+ 
+        function isNumberKey(evt, obj) {            
+            //46
+            var valAmaun = obj.value;
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+
+            if (charCode == 46) {
+
+                if (valAmaun.indexOf('.') > -1) {
+                    return false;
+                }
+                return true;
+            }
+
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+
+            var x = decimalPlaces(valAmaun);
+            if (x == 2) {
+                return false;
+            }
+            return true;
+        }
+
+        function decimalPlaces(num) {
+            var match = ('' + num).match(/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);
+            if (!match) { return 0; }
+            return Math.max(
+                 0,
+                 // Number of digits right of decimal point.
+                 (match[1] ? match[1].length : 0)
+                 // Adjust for scientific notation.
+                 - (match[2] ? +match[2] : 0));
+        }
+
+        function fFormatCommas(nStr) {
+            nStr += '';
+            var x = nStr.split('.');
+            var x1 = x[0];
+            var x2 = x.length > 1 ? '.' + x[1] : '';
+            var rgx = /(\d+)(\d{3})/;
+            while (rgx.test(x1)) {
+                x1 = x1.replace(rgx, '$1' + ',' + '$2');
+            }
+            return x1 + x2;
+        }
+
+        ///fFormatCommas - convert number to comma separated number
+        function fToCommas(obj) {
+            try {
+                var valNum = obj.value;
+                if (valNum !== "") {
+                    valNum = valNum.replace(/,/g, '');
+                    valNum = fFormatCommas(valNum)
+                    obj.value = valNum;
+                }
+            }
+            catch (err) {
+                alert(err)
+            }
+        }
+
+        function formatMoney(number, places, symbol, thousand, decimal) {
+            number = number || 0;
+            places = !isNaN(places = Math.abs(places)) ? places : 2;
+            symbol = symbol !== undefined ? symbol : "";
+            thousand = thousand || ",";
+            decimal = decimal || ".";
+            var negative = number < 0 ? "-" : "",
+                i = parseInt(number = Math.abs(+number || 0).toFixed(places), 10) + "",
+                j = (j = i.length) > 3 ? j % 3 : 0;
+            return symbol + negative + (j ? i.substr(0, j) + thousand : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousand) + (places ? decimal + Math.abs(number - i).toFixed(places).slice(2) : "");
+        }
+
+        //force the textbox's textchanged event to fire at server side
+        function FormatTextBoxDirty(obj) {
+            obj.dirty = false;  // This prevents firing onchange twice in the event that we don't modify the value
+            if (obj.value.length > 0 && obj.value.charAt(0) != '$') {
+                obj.value = '$' + obj.value;
+                obj.dirty = true;
+            }
+        }
+        
+
+        $(function () {   
+            $('li[data-toggle="collapse"]').each(function () {
+                
+                if ($(this).next('ul').length == 0) {
+                    $(this).removeAttr('data-toggle').removeAttr('data-target').removeClass('collapsed');
+                    $(this).find('span.arrow').remove();
+                }
+            });
+            $('ul#menu-content > ul').on('show.bs.collapse', function (e, obj) {
+                
+                $("ul#menu-content > ul").not(this).removeClass("in");
+                var currentHead = $(this).prev("li");
+                $("ul#menu-content > li").not(currentHead).removeClass("active");
+                $(currentHead).addClass("active");
+            })
+
+        });
+
+        function ShowBox() {         
+            if (confirm("Anda pasti untuk keluar dari sistem?") == true) {
+                
+                Redirect();
+                //window.open('', '_parent', '');
+                //window.close();
+            }
+            else {                
+            }
+        }
+
+        function Redirect() {
+            //Redirect to Logout Page.
+            debugger;
+            var strUrl = window.location.pathname;
+            var n = strUrl.search("Main");
+            if (n == -1) {
+                window.location = "../../Logout.aspx";
+            }
+            else {
+
+                window.location = "Logout.aspx";
+            }
+        }
+
+        function Check_Click(objRef) {
+            var row = objRef.parentNode.parentNode;
+            var GridView = row.parentNode;
+            var inputList = GridView.getElementsByTagName("input");
+
+            for (var i = 0; i < inputList.length; i++) {
+                var headerCheckBox = inputList[0];
+                var checked = true;
+
+                if (inputList[i].type == "checkbox" && inputList[i] != headerCheckBox) {
+                    if (!inputList[i].checked) {
+                        checked = false;
+                        break;
+                    }
+                }
+            }
+
+            headerCheckBox.checked = checked;
+
+        }
+
+        function checkAll(objRef) {
+
+            var GridView = objRef.parentNode.parentNode.parentNode;
+            var inputList = GridView.getElementsByTagName("input");
+
+            for (var i = 0; i < inputList.length; i++) {
+                var row = inputList[i].parentNode.parentNode;
+
+                if (inputList[i].type == "checkbox" && objRef != inputList[i]) {
+                    if (objRef.checked) {
+                        // row.style.backgroundColor = "#bce8f1";
+                        inputList[i].checked = true;
+                    }
+                    
+                    else {
+
+                        //if (row.rowIndex % 2 == 0) {
+                        //    row.style.backgroundColor = "#C2D69B";
+                        //}
+                        //else {
+                        //    row.style.backgroundColor = "white";
+                        //}
+
+                        inputList[i].checked = false;
+                    }
+                }
+            }
+        }
+    </script>
+
+    
+
+    
+       
+</body>
+</html>

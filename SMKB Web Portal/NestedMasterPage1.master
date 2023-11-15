@@ -1,0 +1,22 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/Site.Master" AutoEventWireup="false" CodeBehind="NestedMasterPage1.master.vb" Inherits="SMKB_Web_Portal.NestedMasterPage1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+      <div class="sub-modul-title">
+                <h5><asp:Label ID="NamaSubMenu" runat="server" Text="Label"></asp:Label></h5>
+            </div>
+
+            <div class="tab">
+                <asp:Repeater runat="server" ID="rptSubMenu">
+                   <ItemTemplate>
+                      <!-- Repeater item content -->
+                       <%--<button class="tablinks" onclick="openTab(event, '<%#Trim(Eval("Kod_Sub_Menu")) %>')"><%#Trim(Eval("Nama_Sub_Menu")) %></button>--%>
+                       <button class="tablinks" onclick="location.href='./PENTADBIR SISTEM/DAFTAR/Capaian_Kelompok.aspx';"><%#Trim(Eval("Nama_Sub_Menu")) %></button>
+
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div> 
+    
+
+
+    <asp:ContentPlaceHolder ID="FormContent" runat="server">
+      </asp:ContentPlaceHolder>
+</asp:Content>

@@ -1,0 +1,2 @@
+22/09/2021 4:40:38 PM fInsertCommand - Err: Cannot insert the value NULL into column 'ErrID', table 'DbKewanganV1.dbo.MK_UErrRpt'; column does not allow nulls. INSERT fails.
+The statement has been terminated.

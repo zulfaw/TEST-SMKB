@@ -1,0 +1,2031 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="dsSMP">
+      <DataSourceReference>CL_dsSmp</DataSourceReference>
+      <rd:SecurityType>DataBase</rd:SecurityType>
+      <rd:DataSourceID>72d16106-1d3d-485e-ad67-f4168b81a690</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="dstMaklumat">
+      <Query>
+        <DataSourceName>dsSMP</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@Sesi">
+            <Value>=Parameters!Sesi.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Fakulti">
+            <Value>=Parameters!Fakulti.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Kursus">
+            <Value>=Parameters!Kursus.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Status">
+            <Value>=Parameters!Status.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT DISTINCT 
+                         a.SMP01_Nama, a.SMP01_KP, a.SMP01_Nomatrik, LEFT(a.SMP01_Nomatrik, 1) AS Dip, a.SMP01_Fakulti, a.SMP01_Kursus, a.SMP01_Alamat1 + ',' + a.SMP01_Alamat2 AS Alamat, 
+                         a.SMP01_Poskod + ', ' + a.SMP01_Bandar AS bandar, a.SMP01_Negeri, b.Nama_Kursus, c.Fakulti, a.SMP01_TahunP, RIGHT(a.SMP01_SesiDaftar, 9) AS academicSession, d.off_letterDate, d.off_regLocation, d.off_intakesession,h.SPP03_STATMOHON,
+                         d.off_Type, d.off_Status, d.off_academicSession, d.off_regDate, d.off_id, g.SPP05_NOKUMP,d.off_RegDay, d.off_letterDateAppeal 
+FROM            SMP01_Peribadi AS a INNER JOIN
+                         SMP_Kursus AS b ON a.SMP01_Kursus = b.Kod_Kursus INNER JOIN
+                         DbPengambilan.dbo.SPP03_KUTKM AS h ON a.SMP01_KP = h.SPP03_KP 
+INNER JOIN
+                         SMP_Fakulti AS c ON a.SMP01_Fakulti = c.Kod_Fakulti INNER JOIN
+                         DbPengambilan.dbo.SMP_OfferST_Setting AS d ON RIGHT(a.SMP01_SesiDaftar, 9) = d.off_academicSession AND LEFT(a.SMP01_Kursus, 1) = d.off_cat AND d.off_status = '1' INNER JOIN
+                         DbPengambilan.dbo.SMP_OfferDT_Setting AS e ON d.off_id = e.off_id INNER JOIN
+                         DbPengambilan.dbo.SPP05_JAYA AS g ON a.SMP01_KP = g.SPP03_KP
+WHERE   (a.SMP01_SesiDaftar =@Sesi) and (a.SMP01_Fakulti = @Fakulti) and  (h.SPP03_EF='-') and a.SMP01_Kursus in (@Kursus) and (h.SPP03_STATMOHON = @Status)
+ORDER BY a.SMP01_Nama</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="SMP01_Nama">
+          <DataField>SMP01_Nama</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SMP01_KP">
+          <DataField>SMP01_KP</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SMP01_Nomatrik">
+          <DataField>SMP01_Nomatrik</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Dip">
+          <DataField>Dip</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SMP01_Fakulti">
+          <DataField>SMP01_Fakulti</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SMP01_Kursus">
+          <DataField>SMP01_Kursus</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Alamat">
+          <DataField>Alamat</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="bandar">
+          <DataField>bandar</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SMP01_Negeri">
+          <DataField>SMP01_Negeri</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Nama_Kursus">
+          <DataField>Nama_Kursus</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Fakulti">
+          <DataField>Fakulti</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SMP01_TahunP">
+          <DataField>SMP01_TahunP</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="academicSession">
+          <DataField>academicSession</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="off_letterDate">
+          <DataField>off_letterDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="off_regLocation">
+          <DataField>off_regLocation</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="off_intakesession">
+          <DataField>off_intakesession</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="off_Type">
+          <DataField>off_Type</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SPP03_STATMOHON">
+          <DataField>SPP03_STATMOHON</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="off_Status">
+          <DataField>off_Status</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="off_academicSession">
+          <DataField>off_academicSession</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="off_regDate">
+          <DataField>off_regDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="off_id">
+          <DataField>off_id</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="SPP05_NOKUMP">
+          <DataField>SPP05_NOKUMP</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="off_RegDay">
+          <DataField>off_RegDay</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="off_letterDateAppeal">
+          <DataField>off_letterDateAppeal</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="dsSesi">
+      <Query>
+        <DataSourceName>dsSMP</DataSourceName>
+        <CommandText>select distinct bil,kodsesi_sem,'1' as  ambil 
+from SMP_sesipengajian 
+order by bil DESC</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="kodsesi_sem">
+          <DataField>kodsesi_sem</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BIL">
+          <DataField>bil</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="ambil">
+          <DataField>ambil</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="dsFakulti">
+      <Query>
+        <DataSourceName>dsSMP</DataSourceName>
+        <CommandText>SELECT        Kod_Fakulti,'1' AS ambil
+FROM            SMP_Fakulti
+WHERE     
+                         (Kod_Fakulti LIKE N'F%')
+ORDER BY Kod_Fakulti</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="ambil">
+          <DataField>ambil</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Kod_Fakulti">
+          <DataField>Kod_Fakulti</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="dsKursus">
+      <Query>
+        <DataSourceName>dsSMP</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@Fakulti">
+            <Value>=Parameters!Fakulti.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Sesi">
+            <Value>=Parameters!Sesi.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT DISTINCT SMP01_KURSUS FROM SMP01_PERIBADI WHERE left(SMP01_KURSUS,1) in ('b','d') and SMP01_SESIDAFTAR = @Sesi AND SMP01_FAKULTI = @Fakulti
+order by SMP01_KURSUS</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="SMP01_KURSUS">
+          <DataField>SMP01_KURSUS</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="dsPTJ">
+      <Query>
+        <DataSourceName>dsSMP</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@Pengguna">
+            <Value>=Parameters!Pengguna.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT        SMP20_Jabatan
+FROM            SMP20_Staf
+WHERE        (SMP20_NoStaf = @Pengguna)</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="SMP20_Jabatan">
+          <DataField>SMP20_Jabatan</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="dsTahap">
+      <Query>
+        <DataSourceName>dsSMP</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@Pengguna">
+            <Value>=Parameters!Pengguna.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT        ULevel
+FROM            SMP_USekuriti
+WHERE        (UserId = @Pengguna)</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ULevel">
+          <DataField>ULevel</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Tablix Name="Tablix3">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>6.52604in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>6.60652in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Rectangle Name="Rectangle3">
+                          <ReportItems>
+                            <Textbox Name="SMP01_Nama">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!SMP01_Nama.Value</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>SMP01_Nama</rd:DefaultName>
+                              <Top>0.2022in</Top>
+                              <Left>0.0662in</Left>
+                              <Height>0.19097in</Height>
+                              <Width>4.99932in</Width>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Alamat">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!Alamat.Value</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Alamat</rd:DefaultName>
+                              <Top>0.40915in</Top>
+                              <Left>0.06828in</Left>
+                              <Height>0.19097in</Height>
+                              <Width>6.20766in</Width>
+                              <ZIndex>1</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="bandar">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!bandar.Value + " " + Fields!SMP01_Negeri.Value</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>bandar</rd:DefaultName>
+                              <Top>0.6154in</Top>
+                              <Left>0.07037in</Left>
+                              <Height>0.19097in</Height>
+                              <Width>6.20591in</Width>
+                              <ZIndex>2</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="off_letterDate">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Switch(Fields!SPP03_STATMOHON.Value = "R", Day(Fields!off_letterDateAppeal.Value)&amp; " " &amp; Switch(MonthName(Month(Fields!off_letterDateAppeal.Value))="January", "Januari",
+MonthName(Month(Fields!off_letterDateAppeal.Value))="February", "Februari" ,
+MonthName(Month(Fields!off_letterDateAppeal.Value))="March", "Mac" ,
+MonthName(Month(Fields!off_letterDateAppeal.Value))="April", "April" ,
+MonthName(Month(Fields!off_letterDateAppeal.Value))="May", "Mei" ,
+MonthName(Month(Fields!off_letterDateAppeal.Value))="June", "Jun" ,
+MonthName(Month(Fields!off_letterDateAppeal.Value))="July", "Julai" ,
+MonthName(Month(Fields!off_letterDateAppeal.Value))="August", "Ogos" ,
+MonthName(Month(Fields!off_letterDateAppeal.Value))="September", "September" ,
+MonthName(Month(Fields!off_letterDateAppeal.Value))="October", "Oktober" ,
+MonthName(Month(Fields!off_letterDateAppeal.Value))="November", "November" ,
+MonthName(Month(Fields!off_letterDateAppeal.Value))="December", "Disember")
+&amp; " " &amp; year(Fields!off_letterDateAppeal.Value), Fields!SPP03_STATMOHON.Value &lt;&gt; "R", Day(Fields!off_letterDate.Value)&amp; " " &amp; Switch(MonthName(Month(Fields!off_letterDate.Value))="January", "Januari",
+MonthName(Month(Fields!off_letterDate.Value))="February", "Februari" ,
+MonthName(Month(Fields!off_letterDate.Value))="March", "Mac" ,
+MonthName(Month(Fields!off_letterDate.Value))="April", "April" ,
+MonthName(Month(Fields!off_letterDate.Value))="May", "Mei" ,
+MonthName(Month(Fields!off_letterDate.Value))="June", "Jun" ,
+MonthName(Month(Fields!off_letterDate.Value))="July", "Julai" ,
+MonthName(Month(Fields!off_letterDate.Value))="August", "Ogos" ,
+MonthName(Month(Fields!off_letterDate.Value))="September", "September" ,
+MonthName(Month(Fields!off_letterDate.Value))="October", "Oktober" ,
+MonthName(Month(Fields!off_letterDate.Value))="November", "November" ,
+MonthName(Month(Fields!off_letterDate.Value))="December", "Disember")
+&amp; " " &amp; year(Fields!off_letterDate.Value))</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <Format>dd MMMM, yyyy</Format>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Right</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>off_letterDate</rd:DefaultName>
+                              <Top>0.17375in</Top>
+                              <Left>5.13497in</Left>
+                              <Height>0.16596in</Height>
+                              <Width>1.09299in</Width>
+                              <ZIndex>3</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox9">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>Saudara/i,</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox9</rd:DefaultName>
+                              <Top>1.14588in</Top>
+                              <Left>0.03746in</Left>
+                              <Height>0.19097in</Height>
+                              <Width>1in</Width>
+                              <ZIndex>4</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox10">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>="TAWARAN KEMASUKAN KE UNIVERSITI TEKNIKAL MALAYSIA MELAKA SEMESTER " + "1" + " SESI " + Fields!academicSession.Value</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox10</rd:DefaultName>
+                              <Top>1.32574in</Top>
+                              <Left>0.03746in</Left>
+                              <Height>0.19097in</Height>
+                              <Width>6.155in</Width>
+                              <ZIndex>5</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox11">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>Tahniah</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                    <TextRun>
+                                      <Value>, sukacita dimaklumkan bahawa anda telah ditawarkan tempat bagi mengikuti Program Pengajian seperti berikut :-</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Normal</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox10</rd:DefaultName>
+                              <Top>1.52227in</Top>
+                              <Left>0.03844in</Left>
+                              <Height>0.19097in</Height>
+                              <Width>6.1675in</Width>
+                              <ZIndex>6</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox12">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>Program Pengajian </Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox10</rd:DefaultName>
+                              <Top>1.72713in</Top>
+                              <Left>0.03844in</Left>
+                              <Height>0.19097in</Height>
+                              <Width>1.39485in</Width>
+                              <ZIndex>7</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox18">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>:</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox18</rd:DefaultName>
+                              <Top>1.70747in</Top>
+                              <Left>1.78021in</Left>
+                              <Height>0.19097in</Height>
+                              <Width>0.10417in</Width>
+                              <ZIndex>8</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox17">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>Tahun</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox10</rd:DefaultName>
+                              <Top>1.92344in</Top>
+                              <Left>0.03545in</Left>
+                              <Height>0.19097in</Height>
+                              <Width>0.96912in</Width>
+                              <ZIndex>9</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox19">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>:</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox18</rd:DefaultName>
+                              <Top>1.91233in</Top>
+                              <Left>1.77553in</Left>
+                              <Height>0.19097in</Height>
+                              <Width>0.10417in</Width>
+                              <ZIndex>10</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox20">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>Fakulti</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox10</rd:DefaultName>
+                              <Top>2.32733in</Top>
+                              <Left>0.04199in</Left>
+                              <Height>0.19097in</Height>
+                              <Width>0.96912in</Width>
+                              <ZIndex>11</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox21">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>:</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox18</rd:DefaultName>
+                              <Top>2.33288in</Top>
+                              <Left>1.7944in</Left>
+                              <Height>0.19097in</Height>
+                              <Width>0.10417in</Width>
+                              <ZIndex>12</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Nama_Kursus">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=UCase(Fields!Nama_Kursus.Value)</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Nama_Kursus</rd:DefaultName>
+                              <Top>1.71789in</Top>
+                              <Left>1.88716in</Left>
+                              <Height>0.19097in</Height>
+                              <Width>4.31878in</Width>
+                              <ZIndex>13</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="SMP01_TahunP">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value EvaluationMode="Constant">1</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>SMP01_TahunP</rd:DefaultName>
+                              <Top>1.92462in</Top>
+                              <Left>1.89359in</Left>
+                              <Height>0.19097in</Height>
+                              <Width>1in</Width>
+                              <ZIndex>14</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Fakulti">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=UCase(Fields!Fakulti.Value)</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Fakulti</rd:DefaultName>
+                              <Top>2.33983in</Top>
+                              <Left>1.91107in</Left>
+                              <Height>0.19097in</Height>
+                              <Width>4.28508in</Width>
+                              <ZIndex>15</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox22">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>Tempat</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox10</rd:DefaultName>
+                              <Top>2.7551in</Top>
+                              <Left>0.04204in</Left>
+                              <Height>0.19097in</Height>
+                              <Width>0.96976in</Width>
+                              <ZIndex>16</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox24">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>:</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox18</rd:DefaultName>
+                              <Top>2.76968in</Top>
+                              <Left>1.75596in</Left>
+                              <Height>0.19097in</Height>
+                              <Width>0.10417in</Width>
+                              <ZIndex>17</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox36">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>Sila datang mendaftar di :-</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox36</rd:DefaultName>
+                              <Top>2.52247in</Top>
+                              <Left>0.03248in</Left>
+                              <Height>0.19097in</Height>
+                              <Width>1.54167in</Width>
+                              <ZIndex>18</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox29">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>Tarikh</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox10</rd:DefaultName>
+                              <Top>3.14794in</Top>
+                              <Left>0.04462in</Left>
+                              <Height>0.19097in</Height>
+                              <Width>0.97829in</Width>
+                              <ZIndex>19</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox32">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>Bayaran</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox10</rd:DefaultName>
+                              <Top>3.35557in</Top>
+                              <Left>0.05144in</Left>
+                              <Height>0.19097in</Height>
+                              <Width>0.96912in</Width>
+                              <ZIndex>20</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox35">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>Kemudahan Kolej Kediaman</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox10</rd:DefaultName>
+                              <Top>3.56043in</Top>
+                              <Left>0.02935in</Left>
+                              <Height>0.19097in</Height>
+                              <Width>1.68417in</Width>
+                              <ZIndex>21</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox34">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>:</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox18</rd:DefaultName>
+                              <Top>3.56043in</Top>
+                              <Left>1.75102in</Left>
+                              <Height>0.19097in</Height>
+                              <Width>0.10417in</Width>
+                              <ZIndex>22</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox41">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>:</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox18</rd:DefaultName>
+                              <Top>3.13266in</Top>
+                              <Left>1.76805in</Left>
+                              <Height>0.19097in</Height>
+                              <Width>0.10417in</Width>
+                              <ZIndex>23</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox37">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>Disediakan</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Normal</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox10</rd:DefaultName>
+                              <Top>3.56043in</Top>
+                              <Left>1.88919in</Left>
+                              <Height>0.19097in</Height>
+                              <Width>0.96912in</Width>
+                              <ZIndex>24</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox47">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>(Surat Tawaran ini cetakan komputer, tanda tangan tidak diperlukan)</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Normal</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox10</rd:DefaultName>
+                              <Top>6.41555in</Top>
+                              <Height>0.19097in</Height>
+                              <Width>6.1425in</Width>
+                              <ZIndex>25</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox43">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>MOHD NIZAM BIN PAVEL</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>BAHAGIAN PENGURUSAN AKADEMIK</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>Pejabat Pendaftar</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>Universiti Teknikal Malaysia Melaka</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox10</rd:DefaultName>
+                              <Top>5.8218in</Top>
+                              <Left>0.00791in</Left>
+                              <Height>0.59374in</Height>
+                              <Width>2.57311in</Width>
+                              <ZIndex>26</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox42">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>t.t</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Normal</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox10</rd:DefaultName>
+                              <Top>5.60305in</Top>
+                              <Left>0.02935in</Left>
+                              <Height>0.19097in</Height>
+                              <Width>1.26079in</Width>
+                              <ZIndex>27</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox26">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>Yang benar,</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Normal</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox10</rd:DefaultName>
+                              <Top>5.41208in</Top>
+                              <Left>0.02935in</Left>
+                              <Height>0.19097in</Height>
+                              <Width>1.26079in</Width>
+                              <ZIndex>28</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox23">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>Sekian, terima kasih.</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Normal</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox10</rd:DefaultName>
+                              <Top>5.20722in</Top>
+                              <Left>0.02935in</Left>
+                              <Height>0.19097in</Height>
+                              <Width>1.26079in</Width>
+                              <ZIndex>29</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox103">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>PENTING :</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                        <TextDecoration>Underline</TextDecoration>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>1. Anda dikehendaki mematuhi syarat-syarat tawaran seperti yang terdapat di muka belakang.</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                        <TextDecoration>None</TextDecoration>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>2. Tawaran akan ditarik balik sekiranya UTeM mendapati maklumat yang anda beri tidak betul.</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                        <TextDecoration>None</TextDecoration>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>3. Calon hanya diterima sebagai pelajar UTeM setelah dokumen disemak &amp; disahkan serta mematuhi syarat kemasukan yang ditetapkan oleh UTeM semasa hari pendaftaran.</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                        <TextDecoration>None</TextDecoration>
+                                      </Style>
+                                    </TextRun>
+                                    <TextRun>
+                                      <Value xml:space="preserve"> </Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox103</rd:DefaultName>
+                              <Top>4.49433in</Top>
+                              <Left>0.03248in</Left>
+                              <Height>0.7129in</Height>
+                              <Width>6.15833in</Width>
+                              <ZIndex>30</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <TopBorder>
+                                  <Color>Black</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </TopBorder>
+                                <BottomBorder>
+                                  <Color>Black</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </BottomBorder>
+                                <LeftBorder>
+                                  <Color>Black</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </LeftBorder>
+                                <RightBorder>
+                                  <Color>Black</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </RightBorder>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox39">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>No Matrik</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox10</rd:DefaultName>
+                              <Top>3.77918in</Top>
+                              <Left>0.0282in</Left>
+                              <Height>0.19097in</Height>
+                              <Width>1.65893in</Width>
+                              <ZIndex>31</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox48">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>:</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox18</rd:DefaultName>
+                              <Top>3.78546in</Top>
+                              <Left>1.75102in</Left>
+                              <Height>0.19233in</Height>
+                              <Width>0.10899in</Width>
+                              <ZIndex>32</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="SMP01_Nomatrik">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!SMP01_Nomatrik.Value</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>SMP01_Nomatrik</rd:DefaultName>
+                              <Top>3.79307in</Top>
+                              <Left>1.88182in</Left>
+                              <Height>0.18563in</Height>
+                              <Width>0.77108in</Width>
+                              <ZIndex>33</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="SMP01_KP">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!SMP01_KP.Value</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>SMP01_KP</rd:DefaultName>
+                              <Top>0.00846in</Top>
+                              <Left>0.07037in</Left>
+                              <Height>0.19374in</Height>
+                              <Width>1in</Width>
+                              <ZIndex>34</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Fakulti2">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!off_regLocation.Value</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Fakulti</rd:DefaultName>
+                              <Top>2.7676in</Top>
+                              <Left>1.87402in</Left>
+                              <Height>0.30555in</Height>
+                              <Width>4.32218in</Width>
+                              <ZIndex>35</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Fakulti3">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=format(First(Fields!off_regDate.Value, "dstMaklumat"),"dd/MM/yyyy") + " " + First(Fields!off_RegDay.Value, "dstMaklumat")</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <Format>dd/MM/yyyy</Format>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Fakulti</rd:DefaultName>
+                              <Top>3.15232in</Top>
+                              <Left>1.86207in</Left>
+                              <Height>0.19097in</Height>
+                              <Width>4.33039in</Width>
+                              <ZIndex>36</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Subreport Name="Subreport1">
+                              <ReportName>SubYuran1</ReportName>
+                              <Parameters>
+                                <Parameter Name="Id">
+                                  <Value>=Fields!off_id.Value</Value>
+                                </Parameter>
+                                <Parameter Name="kursus">
+                                  <Value>=Fields!SMP01_Kursus.Value</Value>
+                                </Parameter>
+                              </Parameters>
+                              <Top>3.14794in</Top>
+                              <Left>1.77553in</Left>
+                              <Height>0.37082in</Height>
+                              <Width>1.89825in</Width>
+                              <ZIndex>37</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </Subreport>
+                            <Subreport Name="Subreport3">
+                              <ReportName>Sub_surat_tawaranInd1</ReportName>
+                              <Parameters>
+                                <Parameter Name="NoMatrik">
+                                  <Value>=Fields!SMP01_Nomatrik.Value</Value>
+                                </Parameter>
+                                <Parameter Name="DB">
+                                  <Value>=Fields!Dip.Value</Value>
+                                </Parameter>
+                                <Parameter Name="Kursus">
+                                  <Value>=Fields!SMP01_Kursus.Value</Value>
+                                </Parameter>
+                              </Parameters>
+                              <Top>10.73886cm</Top>
+                              <Left>0.09004cm</Left>
+                              <Height>0.53563cm</Height>
+                              <Width>15.63881cm</Width>
+                              <ZIndex>38</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Subreport>
+                            <Subreport Name="Subreport4">
+                              <ReportName>SubTahunF1</ReportName>
+                              <Parameters>
+                                <Parameter Name="NoKp">
+                                  <Value>=Fields!SMP01_KP.Value</Value>
+                                </Parameter>
+                              </Parameters>
+                              <Top>5.46464cm</Top>
+                              <Left>0.11958cm</Left>
+                              <Height>0.27038cm</Height>
+                              <Width>15.73418cm</Width>
+                              <ZIndex>39</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </Subreport>
+                            <Textbox Name="Textbox1">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>No. MHS</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox1</rd:DefaultName>
+                              <Top>10.08418cm</Top>
+                              <Left>0.1018cm</Left>
+                              <Height>0.45889cm</Height>
+                              <Width>1.64099cm</Width>
+                              <ZIndex>40</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="SPP05_NOKUMP">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!SPP05_NOKUMP.Value</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>SPP05_NOKUMP</rd:DefaultName>
+                              <Top>10.10358cm</Top>
+                              <Left>4.7597cm</Left>
+                              <Height>0.45889cm</Height>
+                              <Width>1.00691cm</Width>
+                              <ZIndex>41</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox49">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>:</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox18</rd:DefaultName>
+                              <Top>3.97779in</Top>
+                              <Left>1.75102in</Left>
+                              <Height>0.19233in</Height>
+                              <Width>0.10899in</Width>
+                              <ZIndex>42</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </ReportItems>
+                          <KeepTogether>true</KeepTogether>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                        </Rectangle>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Details" />
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>dstMaklumat</DataSetName>
+            <Top>0.03321in</Top>
+            <Left>0.0375in</Left>
+            <Height>6.60652in</Height>
+            <Width>6.52604in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+        </ReportItems>
+        <Height>16.86491cm</Height>
+        <Style />
+      </Body>
+      <Width>16.67139cm</Width>
+      <Page>
+        <PageHeader>
+          <Height>4.00406cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
+        <PageHeight>29.7cm</PageHeight>
+        <PageWidth>21cm</PageWidth>
+        <LeftMargin>2cm</LeftMargin>
+        <RightMargin>1cm</RightMargin>
+        <TopMargin>1cm</TopMargin>
+        <BottomMargin>1cm</BottomMargin>
+        <ColumnSpacing>1.27cm</ColumnSpacing>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="Pengguna">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>01511</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Pengguna</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="Tahap">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>dsTahap</DataSetName>
+          <ValueField>ULevel</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Tahap</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>dsTahap</DataSetName>
+          <ValueField>ULevel</ValueField>
+          <LabelField>ULevel</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="PTJ">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>dsPTJ</DataSetName>
+          <ValueField>SMP20_Jabatan</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>PTJ</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>dsPTJ</DataSetName>
+          <ValueField>SMP20_Jabatan</ValueField>
+          <LabelField>SMP20_Jabatan</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="Sesi">
+      <DataType>String</DataType>
+      <Prompt>Sesi</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>dsSesi</DataSetName>
+          <ValueField>kodsesi_sem</ValueField>
+          <LabelField>kodsesi_sem</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="Fakulti">
+      <DataType>String</DataType>
+      <Prompt>Fakulti</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>dsFakulti</DataSetName>
+          <ValueField>Kod_Fakulti</ValueField>
+          <LabelField>Kod_Fakulti</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="Kursus">
+      <DataType>String</DataType>
+      <Prompt>Kursus</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>dsKursus</DataSetName>
+          <ValueField>SMP01_KURSUS</ValueField>
+          <LabelField>SMP01_KURSUS</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="Status">
+      <DataType>String</DataType>
+      <Prompt>Status</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>R</Value>
+            <Label>R</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>L</Value>
+            <Label>L</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>WI</Value>
+            <Label>WI</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>R2</Value>
+            <Label>R2</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>F</Value>
+            <Label>F</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+  </ReportParameters>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>3</NumberOfColumns>
+      <NumberOfRows>3</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>Pengguna</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>Tahap</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>PTJ</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>Sesi</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>Fakulti</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>Kursus</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>Status</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+  <EmbeddedImages>
+    <EmbeddedImage Name="headerb">
+      <MIMEType>image/gif</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>810e6fd6-44dc-474e-a9be-f5db5a20b5cc</rd:ReportID>
+</Report>

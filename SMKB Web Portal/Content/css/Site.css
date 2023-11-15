@@ -1,0 +1,216 @@
+﻿/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    padding-top: 5px;
+    padding-bottom: 20px;
+    margin: 0px;
+    padding: 0px;
+    /*background-image: url('../Images/Wsmkb.bmp');*/
+    /*background-repeat :no-repeat ;*/
+    /*background-position :700px 60px ;*/
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+/*.body-content {*/
+    /*padding-left: 15px;*/
+    /*padding-right: 15px;*/
+    
+
+/*}*/
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="select"] {
+    max-width: 1000px;
+    }
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+    }
+    /*.body-content {*/
+        /*padding: 10px;*/
+    /*}*/
+}
+
+/*h1 {
+    font-size: 13pt;
+    display: inline-block;
+    margin: 0 auto ;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000;
+    left: 150px;
+    position: relative;
+    width: 500px;
+    text-align: center;
+    color:#2D2D2D;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+h1:after {
+    content: '\f097';
+    position: absolute;
+    font-family: FontAwesome;
+    background-color: #FFF;
+    display: block;
+    font-weight: 300;
+    font-size: 13pt;
+    left: 50%;
+    top: 25px;    
+}*/
+
+h1{
+    font-size: 11pt;
+    font-weight: 600;
+    /*background-color:#FFFFD4;*/
+    padding-bottom: 5px;
+    padding-top:5px;
+    width: 100%;
+    text-align: center;
+    top:20px;
+    position:relative;  
+    border-top: 1px solid #D2D2D2;
+    border-bottom: 1px solid #E1E1E1;
+     margin-bottom: 50px;
+
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top, #ffffff 0%, #f3f3f3 50%, #ededed 51%, #ffffff 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #ffffff 0%,#f3f3f3 50%,#ededed 51%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #ffffff 0%,#f3f3f3 50%,#ededed 51%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
+
+
+
+    .btnStyle {
+  background: #ffffff;
+  background-image: -webkit-linear-gradient(top, #ffffff, #eaeff2);
+  background-image: -moz-linear-gradient(top, #ffffff, #eaeff2);
+  background-image: -ms-linear-gradient(top, #ffffff, #eaeff2);
+  background-image: -o-linear-gradient(top, #ffffff, #eaeff2);
+  background-image: linear-gradient(to bottom, #ffffff, #eaeff2);
+  -webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  border-radius: 3px;
+  font-family: Arial;
+  color: #000000;
+  font-size: 12px;
+  padding: 5px 5px 5px 5px;
+  border: solid #808285 1px;
+  text-decoration: none;
+  width:120px;
+}
+
+.btnStyle:hover {
+  text-decoration: none;
+}
+
+.scroll{
+    overflow:scroll;
+}
+
+.rightAlign { text-align:right; }
+.leftAlign { text-align:left; }
+.centerAlign { text-align:center; }
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+.btn-circle.btn-lg {
+    width: 50px;
+    height: 50px;
+    padding: 1px 10px;
+    border-radius: 35px;
+    font-size: 25px;
+    line-height: 50px;
+    top: 55px;
+    left: 0px;
+}
+
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 35px;
+  line-height: 1.33;
+  border-radius: 35px;
+}
+
+.table-borderless > tbody > tr > td,
+.table-borderless > tbody > tr > th,
+.table-borderless > tfoot > tr > td,
+.table-borderless > tfoot > tr > th,
+.table-borderless > thead > tr > td,
+.table-borderless > thead > tr > th {
+    border: none;
+}
+
+.stepwizard-step p {
+    margin-top: 10px;    
+}
+
+.stepwizard-row {
+    display: table-row;
+}
+
+.stepwizard {
+    display: table;     
+    width: 100%;
+    position: relative;
+}
+
+.stepwizard-step button[disabled] {
+    opacity: 1 !important;
+    filter: alpha(opacity=100) !important;
+}
+
+.stepwizard-row:before {
+    top: 14px;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    z-order: 0;
+}
+
+.stepwizard-step {    
+    display: table-cell;
+    text-align: center;
+    position: relative;
+}
+
+.Note{
+    Color: #808080;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    color: #777777;
+   line-height: 1.428571429;
+    }
+
+.Title
+{
+        font-size: 14px;
+    color: darkslategray;
+}
+

@@ -1,0 +1,3 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/Site.Master" AutoEventWireup="false" CodeBehind="NestedMasterPage3.master.vb" Inherits="SMKB_Web_Portal.NestedMasterPage3" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+</asp:Content>

@@ -1,0 +1,5 @@
+6/1/2023 8:17:31 AM Page_Load(), Err - System.InvalidOperationException: Asynchronous operations are not allowed in this context. Page starting an asynchronous operation has to have the Async attribute set to true and an asynchronous operation can only be started on a page prior to PreRenderComplete event.
+   at System.Web.LegacyAspNetSynchronizationContext.OperationStarted()
+   at System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Create()
+   at SMKB_Web_Portal.index.getTokenID()
+   at SMKB_Web_Portal.index.Page_Load(Object sender, EventArgs e) in E:\SMKB Web Portal\SMKB Web Portal\index.aspx.vb:line 59
